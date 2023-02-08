@@ -1,0 +1,33 @@
+[package]
+name = "bitflags-serde-legacy"
+version = "0.1.0"
+edition = "2021"
+authors = ["Ashley Mannix"]
+license = "MIT OR Apache-2.0"
+keywords = ["bit", "bitmask", "bitflags", "flags"]
+readme = "README.md"
+repository = "https://github.com/KodrAus/bitflags-serde-legacy"
+homepage = "https://github.com/KodrAus/bitflags-serde-legacy"
+documentation = "https://docs.rs/bitflags-serde-legacy"
+categories = ["no-std"]
+description = """
+Implement serde traits for bitflags 2.x types compatibly with 1.x.
+"""
+exclude = [".github"]
+
+[dependencies.bitflags]
+version = "2.0.0-beta.1"
+
+[dependencies.serde]
+version = "1"
+default-features = false
+
+[dev-dependencies.serde_derive]
+version = "1"
+
+[dev-dependencies.serde_test]
+version = "1"
+
+[dev-dependencies.bitflags1]
+version = "1"
+package = "bitflags"
