@@ -4,7 +4,7 @@
 
 ```rust
 use bitflags::bitflags;
-//!
+
 bitflags! {
     // #[derive(Serialize, Deserialize)]
     struct Flags: u32 {
