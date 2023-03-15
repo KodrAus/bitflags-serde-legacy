@@ -19,7 +19,7 @@ version = "0.1.0"
 Then, replace an existing `#[derive(Serialize, Deserialize)]` on your `bitflags!`
 generated types with the following manual implementations:
 
-```
+```rust
 use bitflags::bitflags;
 
 bitflags! {
