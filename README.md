@@ -1,8 +1,25 @@
 # bitflags-serde-legacy
 
+The serialization format used by [`bitflags!`](docs.rs/bitflags) has changed between `1.x` and
+`2.x`. If you previously `#[derive(Serialize, Deserialize]`, then you can use this library to
+maintain compatibility while upgrading.
 
+# Usage
 
-```rust
+You can either use this as a regular dependency, or pull the source into a private module
+in your project.
+
+Add `bitflags-serde-legacy` to your `Cargo.toml`:
+
+```toml
+[dependencies.bitflags_serde_legacy]
+version = "0.1.0"
+```
+
+Then, replace an existing `#[derive(Serialize, Deserialize)]` on your `bitflags!`
+generated types with the following manual implementations:
+
+```
 use bitflags::bitflags;
 
 bitflags! {
