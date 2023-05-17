@@ -48,17 +48,17 @@ use serde::{
     Deserialize, Deserializer, Serialize, Serializer,
 };
 
-use bitflags::BitFlags;
+use bitflags::Flags;
 
 /// Serialize a flags type equivalently to how `#[derive(Serialize)]` on a flags type
 /// from `bitflags` `1.x` would.
-pub fn serialize<T: BitFlags, S: Serializer>(
+pub fn serialize<T: Flags, S: Serializer>(
     flags: &T,
     name: &'static str,
     serializer: S,
 ) -> Result<S::Ok, S::Error>
 where
-    <T as BitFlags>::Bits: Serialize,
+    T::Bits: Serialize,
 {
     let mut serialize_struct = serializer.serialize_struct(name, 1)?;
     serialize_struct.serialize_field("bits", &flags.bits())?;
@@ -67,12 +67,12 @@ where
 
 /// Deserialize a flags type equivalently to how `#[derive(Deserialize)]` on a flags type
 /// from `bitflags` `1.x` would.
-pub fn deserialize<'de, T: BitFlags, D: Deserializer<'de>>(
+pub fn deserialize<'de, T: Flags, D: Deserializer<'de>>(
     name: &'static str,
     deserializer: D,
 ) -> Result<T, D::Error>
 where
-    <T as BitFlags>::Bits: Deserialize<'de>,
+    T::Bits: Deserialize<'de>,
 {
     struct BitsVisitor<T>(core::marker::PhantomData<T>);
 
