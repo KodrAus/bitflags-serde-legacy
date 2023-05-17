@@ -16,7 +16,7 @@ Implement serde traits for bitflags 2.x types compatibly with 1.x.
 exclude = [".github"]
 
 [dependencies.bitflags]
-version = "2.0.0-beta.1"
+version = "^2.3"
 
 [dependencies.serde]
 version = "1"
