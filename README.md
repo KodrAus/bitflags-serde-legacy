@@ -13,7 +13,7 @@ Add `bitflags-serde-legacy` to your `Cargo.toml`:
 
 ```toml
 [dependencies.bitflags_serde_legacy]
-version = "0.1.0"
+version = "0.1.1"
 ```
 
 Then, replace an existing `#[derive(Serialize, Deserialize)]` on your `bitflags!`

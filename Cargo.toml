@@ -1,6 +1,6 @@
 [package]
 name = "bitflags-serde-legacy"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Ashley Mannix"]
 license = "MIT OR Apache-2.0"
@@ -16,7 +16,7 @@ Implement serde traits for bitflags 2.x types compatibly with 1.x.
 exclude = [".github"]
 
 [dependencies.bitflags]
-version = "^2.3"
+version = "2.3"
 
 [dependencies.serde]
 version = "1"
