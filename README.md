@@ -12,7 +12,7 @@ in your project.
 Add `bitflags-serde-legacy` to your `Cargo.toml`:
 
 ```toml
-[dependencies.bitflags_serde_legacy]
+[dependencies.bitflags-serde-legacy]
 version = "0.1.1"
 ```
 
